@@ -66,7 +66,7 @@ const toast = useToast()
           thickness="8px"
         >
           <CircularProgressLabel>
-            {parseFloat(size).toFixed(1)}
+            {parseFloat(size)/10}
           </CircularProgressLabel>
         </CircularProgress>
       </VStack>

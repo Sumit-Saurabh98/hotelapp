@@ -39,7 +39,7 @@ function Homepage(props) {
   }, []);
 
 
-  const handleBooknow = async (hotelId) => {
+  const handleBooknow = async () => {
       toast({
         title: "Your booking has been confirmed",
         status: "success",
@@ -51,15 +51,16 @@ function Homepage(props) {
 
 
   const handleSearchSubmit = async () => {
-    if (searchQuery) {
-      try {
-        const {data} = await axios.get(`?q=${searchQuery}`);
-        setSearchResults(data);
-      } catch (err) {
-        console.error(err);
-      }
+  if (searchQuery) {
+    try {
+      const { data } = await axios.get(`${BASE_URL}/rooms?q=${searchQuery}`);
+      setSearchResults(data);
+    } catch (err) {
+      console.error(err);
     }
-  };
+  }
+};
+
 
   return (
     <div>
